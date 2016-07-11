@@ -54,6 +54,7 @@ Player.prototype = {
     }
 }
 
+var allEnemies = [];
 var player = new Player();
 
 document.addEventListener('keyup', function(e) {
