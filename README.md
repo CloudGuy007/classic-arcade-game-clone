@@ -43,8 +43,8 @@ Project for Udacity's Front-End Web Developer Nanodegree.
 
 | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- |
-| ![heart](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/heart.png) | ![key](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/key.png) | ![stone](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/stone.png) | ![star](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/star.png)
-| Heart | Key | Stone | Star |
+| ![heart](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/heart.png) | ![key](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/key.png) | ![rock](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/rock.png) | ![star](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/star.png)
+| Heart | Key | Rock | Star |
 
 ## Controls
 
