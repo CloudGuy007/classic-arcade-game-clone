@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -92,9 +92,25 @@ var Engine = (function(global) {
      */
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
-            enemy.update(dt);
+            if (enemy.x >= 650) {
+                enemy.reset();
+            } else {
+                enemy.update(dt);
+            }
         });
         player.update();
+    }
+
+    function checkCollisions() {
+        /* https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection */
+        allEnemies.forEach(function(enemy) {
+            if (enemy.x < player.x + 22 + player.width &&
+                enemy.x + enemy.width > player.x + 22 &&
+                enemy.y < player.y + player.height &&
+                enemy.y + enemy.height > player.y) {
+                reset();
+            }
+        });
     }
 
     /* This function initially draws the "game level", it will then call
@@ -108,12 +124,12 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/block-water.png',   // row 1 is water
+                'images/block-stone.png',   // row 2 is stone
+                'images/block-stone.png',   // row 3 is stone
+                'images/block-stone.png',   // row 4 is stone
+                'images/block-grass.png',   // row 5 is grass
+                'images/block-grass.png'    // row 6 is grass
             ],
             numRows = 6,
             numCols = 5,
@@ -159,7 +175,10 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+        allEnemies.forEach(function(enemy) {
+            enemy.reset();
+        });
+        player.reset();
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -167,11 +186,23 @@ var Engine = (function(global) {
      * all of these images are properly loaded our game will start.
      */
     Resources.load([
-        'images/stone-block.png',
-        'images/water-block.png',
-        'images/grass-block.png',
+        'images/block-grass.png',
+        'images/block-stone.png',
+        'images/block-water.png',
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/gem-blue.png',
+        'images/gem-green.png',
+        'images/gem-orange.png',
+        'images/heart.png',
+        'images/key.png',
+        'images/rock.png',
+        'images/selector.png',
+        'images/star.png'
     ]);
     Resources.onReady(init);
 
