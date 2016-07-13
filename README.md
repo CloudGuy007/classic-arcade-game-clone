@@ -20,9 +20,14 @@ Click [here](https://jamesparkes.github.io/classic-arcade-game-clone/) to start 
 
 Players use directional arrows or WASD keys to control movement of the character.
 
+| 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- |
+| ![heart](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/left-a.gif) | ![key](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/right-d.gif) | ![rock](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/up-w.gif) | ![star](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/down-s.gif)
+| Left | Right | Up | Down |
+
 ## Characters
 
-Players select from five different characters when starting the game.
+Players can select from five different characters when starting the game.
 
 | 1 | 2 | 3 | 4 | 5 |
 | --- | --- | --- | --- | --- |
@@ -49,7 +54,7 @@ The level is comprised of three different tiles.
 
 ## Gems
 
-Players pick up gems to score extra points.
+Players can pick up gems to score extra points.
 
 | 1 | 2 | 3 |
 | --- | --- | --- |
@@ -58,7 +63,7 @@ Players pick up gems to score extra points.
 
 ## Items
 
-Players pick up items to receive different special effects.
+Players can pick up items to receive different special effects.
 
 | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- |
