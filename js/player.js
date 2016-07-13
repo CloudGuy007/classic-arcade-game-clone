@@ -1,41 +1,55 @@
+/* Player.js
+ * This file provides the functionality for the player's rendering,
+ * movement, and score.
+ */
+
+// Constructor
 var Player = function() {
-    /*
-     * COMMENT: add functionality to select 1 of 5 charaters
-     */
-    this.sprite = 'images/char-boy.png';
-    this.yOffset = 25;
+    // set player's default sprite, width, and height
+    this.sprite = undefined;
     this.width = 57;
     this.height = 65;
-
-    this.x = undefined;
-    this.y = undefined;
+    // offsets for player's sprite and collider
+    this.spriteYOffset = 25;
+    this.colliderXOffset = (101 - this.width) / 2;
+    // initialize player's position and score
+    this.x = 0;
+    this.y = 0;
+    this.score = 0;
 };
-
+// Prototype
 Player.prototype = {
     /*
-     * COMMENT: add function comments
+     * Updates player's render
      */
     update: function() {
-        if (this.y <= 0) {
-            this.reset();
-        }
-
         this.render();
     },
     /*
-     * COMMENT: add function comments
+     * Renders player and his/her score to screen
      */
     render: function() {
-        ctx.drawImage(
-            Resources.get(this.sprite),
-            this.x,
-            this.y
-        );
-        /* debug - show collider */
-        //ctx.strokeRect(this.x + 22, this.y + 76, this.width, this.height);
+        if(this.sprite === undefined) {
+            // do nothing
+        } else {
+            // render player
+            ctx.drawImage(
+                Resources.get(this.sprite),
+                this.x,
+                this.y
+            );
+            // render score
+            ctx.fillStyle = 'white';
+            ctx.font = '26px Arial';
+            ctx.textAlign= 'right';
+            ctx.fillText(this.score, 498, 78);
+            // debug show collider
+            // ctx.strokeRect(this.x + 22, this.y + 76, this.width, this.height);
+        }
     },
     /*
-     * COMMENT: add function comments
+     * Handles input from user and adjusts the player's position
+     * @param {String} key
      */
     handleInput: function(key) {
         // change player's position based on input
@@ -49,14 +63,33 @@ Player.prototype = {
             this.y += 83;
         }
 
+        // if player has reached water
+        if (this.y <= 0) {
+            this.score++;
+            this.resetPosition();
+        }
+
         // update player after position change
         this.update();
     },
     /*
-     * COMMENT: add function comments
+     * Sets player's sprite
+     */
+    setSprite: function(selection) {
+
+    },
+    /*
+     * Resets player's position
+     */
+    resetPosition: function() {
+        this.x = 202;
+        this.y = 415 - this.spriteYOffset;
+    },
+    /**
+     * Resets player to initial game state
      */
     reset: function() {
-        this.x = 202;
-        this.y = 415 - this.yOffset;
+        this.resetPosition();
+        this.score = 0;
     }
 }

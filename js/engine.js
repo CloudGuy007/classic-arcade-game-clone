@@ -17,7 +17,8 @@
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
-     * set the canvas elements height/width and add it to the DOM.
+     * set the canvas elements height/width, adjust the 2D contexts
+     * settings, and add it to the DOM.
      */
     var doc = global.document,
         win = global.window,
@@ -47,6 +48,16 @@ var Engine = (function(global) {
          */
         update(dt);
         render();
+
+        /* Checks to see if the menu is on, if so, let the user select which
+         * sprite they want to use. If the menu if off, then set the player's
+         * sprite before the next render.
+         */
+        if(menu.on) {
+            menu.render();
+        } else {
+            menu.setSprite(player);
+        }
 
         /* Set our lastTime variable which is used to determine the time delta
          * for the next time this function is called.
@@ -104,8 +115,8 @@ var Engine = (function(global) {
     function checkCollisions() {
         /* https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection */
         allEnemies.forEach(function(enemy) {
-            if (enemy.x < player.x + 22 + player.width &&
-                enemy.x + enemy.width > player.x + 22 &&
+            if (enemy.x < player.x + player.colliderXOffset + player.width &&
+                enemy.x + enemy.width > player.x + player.colliderXOffset &&
                 enemy.y < player.y + player.height &&
                 enemy.y + enemy.height > player.y) {
                 reset();
@@ -166,7 +177,6 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
-
         player.render();
     }
 

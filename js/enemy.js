@@ -1,24 +1,32 @@
+/* Enemy.js
+ * This file provides the functionality for the enemy's rendering
+ * and movement.
+ */
+
+// Constructor
 var Enemy = function() {
+    // set enemy's default sprite, width, and height
     this.sprite = 'images/enemy-bug.png';
-    this.yOffset = 25;
     this.width = 101;
     this.height = 83;
-
+    // offset for enemy's sprite
+    this.spriteYOffset = 25;
+    // initialize enemy's position and speed
     this.x = -500;
     this.y = this.convertRowToYPosition(this.setRandomRow());
     this.speed = this.setRandomSpeed();
 };
-
+// Prototype
 Enemy.prototype = {
     /*
-     * COMMENT: add function comments
+     * Updates enemy's position and render
      */
     update: function(dt) {
         this.x += dt + this.speed;
         this.render();
     },
     /*
-     * COMMENT: add function comments
+     * Renders enemy to screen
      */
     render: function() {
         ctx.drawImage(
@@ -26,11 +34,11 @@ Enemy.prototype = {
             this.x,
             this.y
         );
-        /* debug - show collider */
-        //ctx.strokeRect(this.x, this.y + 76, this.width, this.height);
+        // debug show collider
+        // ctx.strokeRect(this.x, this.y + 76, this.width, this.height);
     },
     /*
-     * COMMENT: add function comments
+     * Resets enemy's x position offscreen and selects new row and speed
      */
     reset: function() {
         this.x = -500;
@@ -38,21 +46,21 @@ Enemy.prototype = {
         this.speed = this.setRandomSpeed();
     },
     /*
-     * COMMENT: add function comments
+     * Sets random ememy row position
      */
     setRandomRow: function() {
         return Math.floor(Math.random() * (4 - 1) + 1);
     },
     /*
-     * COMMENT: add function comments
+     * Sets random ememy speed
      */
     setRandomSpeed: function(min, max) {
         return Math.random() * (6 - 2) + 6;
     },
     /*
-     * COMMENT: add function comments
+     * Converts enemy's row position to canvas y position
      */
     convertRowToYPosition: function(y) {
-        return (y * 83) - this.yOffset;
+        return (y * 83) - this.spriteYOffset;
     }
 };

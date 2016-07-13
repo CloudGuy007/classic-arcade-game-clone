@@ -11,10 +11,11 @@ Project for Udacity's Front-End Web Developer Nanodegree.
 * [Level](#level)
 * [Gems](#gems)
 * [Items](#items)
+* [Obstacles](#obstacles)
 
 ## How to Play
 
-Click [here](https://jamesparkes.github.io/classic-arcade-game-clone/) to start the game. The objective is simple, see how many times you can cross the stone paths and reach the water without being hit. Each time you reach the water you'll receive a point. You can also pick up gems to score additional bonus points or items to receive different special effects. But, you'll need to avoid the enemies racing across the screen or you'll lose!
+Click [here](https://jamesparkes.github.io/classic-arcade-game-clone/) to start the game. The objective is simple, see how many times you can cross the stone paths and reach the water without being hit. Each time you reach the water you'll receive a point. But, you'll need to avoid the enemies racing across the screen or you'll lose!
 
 ## Controls
 
@@ -27,7 +28,7 @@ Players use directional arrows or WASD keys to control movement of the character
 
 ## Characters
 
-Players can select from five different characters when starting the game.
+Players select from five different characters when starting the game.
 
 | 1 | 2 | 3 | 4 | 5 |
 | --- | --- | --- | --- | --- |
@@ -54,7 +55,7 @@ The level is comprised of three different tiles.
 
 ## Gems
 
-Players can pick up gems to score extra points.
+TODO: Players pick up gems to score extra points.
 
 | 1 | 2 | 3 |
 | --- | --- | --- |
@@ -63,9 +64,18 @@ Players can pick up gems to score extra points.
 
 ## Items
 
-Players can pick up items to receive different special effects.
+TODO: Players pick up items to receive different special effects.
 
-| 1 | 2 | 3 | 4 |
-| --- | --- | --- | --- |
-| ![heart](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/heart.png) | ![key](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/key.png) | ![rock](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/rock.png) | ![star](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/star.png)
-| Heart | Key | Rock | Star |
+| 1 | 2 | 3 |
+| --- | --- | --- |
+| ![heart](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/heart.png) | ![key](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/key.png) | ![star](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/star.png)
+| Heart | Key | Star |
+
+## Obstacles
+
+TODO: Players should avoid obstacles in their path
+
+| 1 |
+| --- |
+| ![rock](https://raw.githubusercontent.com/jamesparkes/classic-arcade-game-clone/gh-pages/images/rock.png) |
+| Rock |
